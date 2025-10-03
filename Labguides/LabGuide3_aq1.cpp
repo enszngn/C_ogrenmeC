@@ -19,7 +19,5 @@ int main(){
     printf("You win %.2lf TL discount :)\n", discount);
     printf("Please pay %.2lf", pNewClothes - discount);
 
-
-
     return 0;
 }
