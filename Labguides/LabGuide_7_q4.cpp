@@ -12,12 +12,11 @@ int main(){
 
     while(i > 0){
         sum += i % 10;
+        mult *= i % 10;
         i /= 10;
+        
     }
-    while(p > 0){
-        mult *= p % 10;
-        p /= 10;
-    }
+    
     printf("Given num: %d, Sum: %d, Product: %d\n", num, sum, mult);
 
     if(sum == mult)
