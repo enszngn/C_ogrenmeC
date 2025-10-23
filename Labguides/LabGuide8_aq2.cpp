@@ -20,7 +20,7 @@ int main(){
         switch(type){
             case 'F':
             case 'f': 
-                if(juice>0)
+                if(juice + purchased >= 0)
                     {juice += purchased;
                     printf("Fruit Juice stock info: %d\n", juice);}
                 else{
@@ -30,7 +30,7 @@ int main(){
                 break;
             case 'M':
             case 'm':
-                if(milk>0){
+                if(milk + purchased >= 0){
                     milk += purchased;
                     printf("Milk stock info: %d\n", milk);
                 }
@@ -41,7 +41,7 @@ int main(){
                 break;
             case 'C':
             case 'c':
-                if(coke>0){
+                if(coke + purchased >= 0){
                     coke += purchased;
                     printf("Coke stock info: %d\n", coke);
                 }
@@ -50,7 +50,7 @@ int main(){
                     printf("Coke stock info: %d\n", coke);
                 }
                 break;
-            default: printf("Invalid drink'n");
+            default: printf("Invalid drink\n");
         }
 
     }
