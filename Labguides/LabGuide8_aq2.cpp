@@ -55,7 +55,7 @@ int main(){
 
     }
 
-    printf("Stock Information\n******************\nFruit Juice   %-3d\nMilk          %-3d\nCoke          %-3d\n", juice, milk, coke);
+    printf("Stock Information\n*****************\nFruit Juice   %3d\nMilk          %3d\nCoke          %3d\n", juice, milk, coke);
 
     return 0;
 }
