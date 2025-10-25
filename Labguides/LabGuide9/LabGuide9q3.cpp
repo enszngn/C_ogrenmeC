@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main(){
-    int randnum, choice = 0, i, p, j;
-    char bos = ' ';
+int Boktanucgenolusturucu(){
+    int randnum, choice = 0, i, p, j;;
     srand(time(NULL));
     
     while(choice != 3){
@@ -23,7 +22,7 @@ int main(){
             printf("Random number is %d\n", randnum);
             for(i = 1; i <= randnum; i++){
                 for(p = 1; p <= randnum - i; p++)
-                    printf("%c", bos);
+                    printf("%c", ' ');
                 for(p = 1; p <= i; p++)
                     printf("%d", p);
                 printf("\n");
@@ -33,7 +32,7 @@ int main(){
             printf("Random number is %d\n", randnum);
             for(i = 1; i <= randnum; i++){
                 for(p = 1; p <= randnum - i; p++)
-                    printf("%c", bos);
+                    printf("%c", ' ');
                 for(p = 1; p <= i; p++)
                     printf("%d", p);
                 for(p = i - 1; p >= 1; p--)
@@ -45,3 +44,8 @@ int main(){
     
     return 0;
 }
+
+int main(){
+    Boktanucgenolusturucu();
+}
+
