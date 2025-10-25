@@ -4,7 +4,8 @@
 int main(){
 
 
-    //format specifiers %d for int
+    //format specifiers 
+    //%d for int
     //%f for float and double
     //%c for char
     //%s for string (char array)
