@@ -18,11 +18,17 @@ int main(){
 	withdrawn(amountWithdrawn, &money200, &money100, &money50, &money20, &money10);	
 
 	printf("\nFor %d TL, the ATM will give the following banknotes:\n", amountWithdrawn);
-	printf("%d unit(s) of 200TL\n", money200);
-	printf("%d unit(s) of 100TL\n", money100);
-	printf("%d unit(s) of 50TL\n", money50);
-	printf("%d unit(s) of 20TL\n", money20);
-	printf("%d unit(s) of 10TL\n", money10);
+
+	if(money200 != 0)
+		printf("%d unit(s) of 200 TL\n", money200);
+	if(money100 != 0)
+		printf("%d unit(s) of 100 TL\n", money100);
+	if(money50 != 0)
+		printf("%d unit(s) of 50 TL\n", money50);
+	if(money20 != 0)
+		printf("%d unit(s) of 20 TL\n", money20);
+	if(money10 != 0)
+		printf("%d unit(s) of 10 TL\n", money10);
 
 	return 0;
 }
