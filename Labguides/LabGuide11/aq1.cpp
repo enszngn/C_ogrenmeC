@@ -10,6 +10,7 @@ int main(){
 	printf("Enter the amount to be withdrawn: ");
 	scanf("%d", &amountWithdrawn);
 	while(amountWithdrawn % 10 != 0){
+		printf("%d TL cannot be given.\n", amountWithdrawn);
 		printf("Money amount should be multiple of 10 TL.\n\n");
 		printf("Enter the amount to be withdrawn: ");
 		scanf("%d", &amountWithdrawn);
