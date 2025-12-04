@@ -11,8 +11,7 @@ int main(){
 		outp = fopen("final.txt", "w");
 		int status, numOfChar;
 		char ch;
-   		status = fscanf(inp, "%c", &ch);
-		status = fscanf(inp, "%d", &numOfChar);
+   		status = fscanf(inp, "%c %d", &ch, &numOfChar);
 		while(status != EOF){
 			for(int i = 0; i < numOfChar; i++)
 				fprintf(outp, "%c", ch);
