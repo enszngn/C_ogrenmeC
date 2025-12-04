@@ -1,5 +1,14 @@
 {
     "files.associations": {
         "cmath": "cpp"
-    }
+    },
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt ; echo '\n--- Press any key to close ---' ; read -n 1 -s && exit"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.preserveFocus": false,
+    "code-runner.terminalRoot": "/",
+    "terminal.integrated.enablePersistentSessions": false
 }
