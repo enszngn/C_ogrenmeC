@@ -35,4 +35,5 @@ char isAbrreviated(char word[], int size) {
 	for (int i = 0; i < size; i++)
 		if (word[i] >= 'A' && word[i] <= 'Z')
 			return word[i];
+	return '1';
 }
