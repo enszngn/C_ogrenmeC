@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int readFromFile(FILE *inp, int arr1[], int arr2[]);
@@ -14,13 +13,13 @@ int main() {
 	if (inp == NULL)
 		printf("ERROR");
 	else {
-		int nums1[6], nums2[6], lastArray[12], numOfRelativelyPrimes;;
+		int nums1[6], nums2[6], lastArray[100], numOfRelativelyPrimes;;
 		int size = readFromFile(inp, nums1, nums2);
-		//numOfRelativelyPrimes = findRelPrimes(nums1, nums2, size, lastArray);
+		numOfRelativelyPrimes = findRelPrimes(nums1, nums2, size, lastArray);
 		for (int i = 0; i < 6; i++) {
 			printf("%2d   %2d\n", nums1[i], nums2[i]);
 		}
-		/*if (numOfRelativelyPrimes == 0)
+		if (numOfRelativelyPrimes == 0)
 			printf("There are no relatively primes in the arrays!\n");
 		else {
 			printf("there are %d relatively primes in the arrays\n\n", numOfRelativelyPrimes);
@@ -28,7 +27,6 @@ int main() {
 				printf("   %2d   %2d\n", nums1[lastArray[i]], nums2[lastArray[i + 1]]);
 			}
 		}
-		*/
 		fclose(inp);
 	}
 
@@ -52,7 +50,7 @@ int isRelPrime(int num1, int num2) {
 	else
 		max = num2;
 	for (int i = 2; i < max / 2; i++) {
-		if ((num1 % i == 0) && (num2 & i == 0))
+		if ((num1 % i == 0) && (num2 % i == 0))
 			return 0;
 	}
 	return 1;
