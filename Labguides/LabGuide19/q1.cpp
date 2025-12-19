@@ -8,6 +8,7 @@ int findRelPrimes(int arr1[], int arr2[], int size, int lastArray[]);
 
 int main() {
 
+	printf("%d", isRelPrime(7, 14));
 	FILE *inp;
 	inp = fopen("nums1.txt", "r");
 	if (inp == NULL)
@@ -16,9 +17,6 @@ int main() {
 		int nums1[6], nums2[6], lastArray[100], numOfRelativelyPrimes;;
 		int size = readFromFile(inp, nums1, nums2);
 		numOfRelativelyPrimes = findRelPrimes(nums1, nums2, size, lastArray);
-		for (int i = 0; i < 6; i++) {
-			printf("%2d   %2d\n", nums1[i], nums2[i]);
-		}
 		if (numOfRelativelyPrimes == 0)
 			printf("There are no relatively primes in the arrays!\n");
 		else {
@@ -49,7 +47,7 @@ int isRelPrime(int num1, int num2) {
 		max = num1;
 	else
 		max = num2;
-	for (int i = 2; i < max / 2; i++) {
+	for (int i = 2; i <= max / 2; i++) {
 		if ((num1 % i == 0) && (num2 % i == 0))
 			return 0;
 	}
