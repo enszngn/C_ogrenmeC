@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int findTotalVote(int votes[][20], char cities[], int rows, char givenCity, int partyVotesInGivenCity[5]);
+int findTotalVote(int votes[][20], char cities[], int columns, char givenCity, int partyVotesInGivenCity[5]);
 
 double findPercentage(int votes, int totalVotes);
 
@@ -15,12 +15,14 @@ int main(){
 		char cities[20];
 		int partyVotesAnkara[5] = {0}, totalAnkara = 0;
 		int partyVotesIstanbul[5] = {0}, totalIstanbul = 0;
-		int rows = 0;
-		while(rows < 20 && fscanf(inp, "%d %d %c", &votes[0][rows], &votes[1][rows], &cities[rows]) == 3){
-			rows++;
+		int columns = 0, status;
+		status = fscanf(inp, "%d %d %c", &votes[0][columns], &votes[1][columns], &cities[columns]);
+		while(columns < 20 && status != EOF){
+			status = fscanf(inp, "%d %d %c", &votes[0][columns], &votes[1][columns], &cities[columns]);
+			columns++;
 		}
-		totalAnkara = findTotalVote(votes, cities, rows, 'A', partyVotesAnkara);
-		totalIstanbul =  findTotalVote(votes, cities, rows, 'I', partyVotesIstanbul);
+		totalAnkara = findTotalVote(votes, cities, columns, 'A', partyVotesAnkara);
+		totalIstanbul =  findTotalVote(votes, cities, columns, 'I', partyVotesIstanbul);
 		printf("City Code       Ankara        Istanbul\n");
 		printf("*********     **********     **********\n");
 		printf("  Total        	 %d           %d   \n", totalAnkara, totalIstanbul);
@@ -34,9 +36,9 @@ int main(){
 	return 0;
 }
 
-int findTotalVote(int votes[][20], char cities[], int rows, char givenCity, int partyVotesInGivenCity[5]){
+int findTotalVote(int votes[][20], char cities[], int columns, char givenCity, int partyVotesInGivenCity[5]){
 	int totalVote = 0;
-	for(int i = 0; i < rows; i++){
+	for(int i = 0; i < columns; i++){
 		if(cities[i] == givenCity){
 			partyVotesInGivenCity[votes[0][i] - 1] += votes[1][i];
 			totalVote += votes[1][i];
