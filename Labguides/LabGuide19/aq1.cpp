@@ -28,10 +28,10 @@ int main(){
 	}
 	findRowSums(matrix, n, rowSums);
 	maxColumnSum = findColSums(matrix, n, columnSums);
-	printf("Row sums    : [");
+	printf("Row sums    : [  ");
 	display(rowSums, n);
 	printf("]\n");
-	printf("Column sums : [");
+	printf("Column sums : [  ");
 	display(columnSums, n);
 	printf("]\n\n");
 	rowDominants(rowSums, maxColumnSum, n);
@@ -66,14 +66,14 @@ int findColSums(int matrix[][10], int size, int columnSums[]){
 
 void display(int arr[], int size){
 	for(int i = 0; i < size; i++){
-		printf("%d   ", arr[i]);
+		printf("%2d   ", arr[i]);
 	}
 }
 
 void rowDominants(int rowSums[], int maxColumnSum, int size){
 	for(int i = 0; i < size; i++){
 		if(rowSums[i] > maxColumnSum){
-			printf("Row %d is row-dominant (sum = %d)\n\n", i + 1, rowSums[i]);
+		printf("Row %d is row-dominant (sum = %d)\n", i + 1, rowSums[i]);
 		}
 	}
 }

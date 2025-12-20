@@ -11,21 +11,20 @@ int main() {
 	else {
 		FILE *outp;
 		outp = fopen("abbreviation.txt", "w");
-		char word[20], abbreviated[20];
-		int i = 0, status, abbreviatedSize;
+		char word[20], abbreviated[100];
+		int i = 0, status, abbreviatedSize = 0;
 		status = fscanf(inp, "%c", &word[i]);
 		while (status != EOF) {
 			while ((word[i] != ' ' && word[i] != '\n') && status != EOF) {
 				i++;
 				status = fscanf(inp, "%c", &word[i]);
 			}
-			isAbrreviated(word, i, abbreviated, &abbreviatedSize);
-			for(int p = 0; p < abbreviatedSize; p++)
-				fprintf(outp, "%c", abbreviated[p]);
-			if (word[i] == '\n')
-				fprintf(outp, "\n");
+			isAbrreviated(word, i + 1, abbreviated, &abbreviatedSize);
 			i = 0;
 			status = fscanf(inp, "%c", &word[i]);
+		}
+		for(int p = 0; p < abbreviatedSize - 1; p++){
+			fprintf(outp, "%c", abbreviated[p]);
 		}
 		fclose(outp);
 		fclose(inp);
@@ -35,11 +34,11 @@ int main() {
 }
 
 void isAbrreviated(char word[], int size, char abbreviated[], int *abbreviatedSize) {
-	*abbreviatedSize = 0;
-	for (int i = 0; i < size; i++)
-		if (word[i] >= 'A' && word[i] <= 'Z'){
+	for (int i = 0; i < size; i++){
+		if((word[i] >= 'A' && word[i] <= 'Z') || word[i] == '\n'){
 			abbreviated[*abbreviatedSize] = word[i];
-			*abbreviatedSize++;
+			(*abbreviatedSize)++;
 		}
+	}
 
 }
