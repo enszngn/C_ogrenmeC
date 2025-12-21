@@ -18,7 +18,7 @@ int main(){
 		int rows = 0, status;
 		status = fscanf(inp, "%d %d %c", &votes[0][rows], &votes[1][rows], &cities[rows]);
 		while(rows < 20 && status != EOF){
-			status = fscanf(inp, "%d %d %c", &votes[0][rows], &votes[1][rows], &cities[rows])
+			status = fscanf(inp, "%d %d %c", &votes[0][rows], &votes[1][rows], &cities[rows]);
 			rows++;
 		}
 		totalAnkara = findTotalVote(votes, cities, rows, 'A', partyVotesAnkara);
