@@ -23,7 +23,7 @@ int main(){
 			printf("%c  ", matrix[i][p]);
 		printf("\n");
 	}
-	printf("Spiral\n\n");
+	printf("\nSpiral\n\n");
 	spiralDraw(matrix);
 
 	return 0;
