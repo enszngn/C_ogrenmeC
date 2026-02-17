@@ -1,0 +1,7 @@
+6
+Batman 87 95 89
+Superman 45 63 23
+Spiderman 45 67 87
+Joker 45 80 90
+WalterWhite 34 56 98
+MikeWazowski 65 98 89
