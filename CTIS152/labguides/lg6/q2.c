@@ -88,6 +88,5 @@ int findCustomerMaxPayment(customer_information_t customers[], int n){
 			maxPayment = (customers + i)->payment;
 			maxPaymentIndex = i;
 		}
-	return i;
+	return maxPaymentIndex;
 }
-
