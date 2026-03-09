@@ -26,10 +26,11 @@ int main(){
         while(status != EOF){
             printf("%4s %d -> ", name, code);
             name_index = search_courses(code_list, name);
-            if(name_index != -1)
-                printf("%s%d\n", code_list[name_index].code, code);
-            else
+            if(name_index == -1)
                 printf("ERROR\n");
+            else
+                printf("%s%d\n", code_list[name_index].code, code);
+
             status = fscanf(inp, "%s %d", name, &code);
         }
         fclose(inp);
