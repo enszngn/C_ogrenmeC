@@ -1,0 +1,5 @@
+R123 Electric 4.00
+R254 Normal 6.50
+R455 Electric 2.00
+R569 Normal 7.00
+R632 Electric 5.50
